@@ -1,0 +1,13 @@
+.logo1 {
+  display: inline-flex;;
+  background: linear-gradient(to bottom, #f2ced8, #cea6b1);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  font-family: "Great Vibes", cursive;
+  font-weight: 300;
+  font-size: 16px;
+  justify-content: center;
+}
