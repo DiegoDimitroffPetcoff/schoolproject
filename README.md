@@ -4,7 +4,7 @@
 The all project is divided in different files witch are on SRC file. 
 ### Components
 ### Containers
-    #### There you will find all the pages wich are gonna handle the main content of the website
+ There you will find all the pages wich are gonna handle the main content of the website
 
 
 ## Available Scripts
