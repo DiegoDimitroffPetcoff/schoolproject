@@ -12,6 +12,7 @@
 .body{
     display: flex;
     background-color: #f2ced8;
+    justify-content: center;
     height: 450px;
 }
 .footer{

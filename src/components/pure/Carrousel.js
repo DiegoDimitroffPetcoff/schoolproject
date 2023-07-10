@@ -1,36 +1,35 @@
-import React from 'react';
-import { useSnapCarousel } from 'react-snap-carousel';
 
-const Carrousel = () => {
-  const { scrollRef } = useSnapCarousel();
-  return (
-    <ul
-      ref={scrollRef}
-      style={{
-        display: 'flex',
-        overflow: 'auto',
-        scrollSnapType: 'x mandatory'
-      }}
-    >
-      {Array.from({ length: 100 }).map((_, i) => (
-        <li
-          style={{
-            backgroundColor: 'aqua',
-            fontSize: '50px',
-            width: '250px',
-            height: '250px',
-            flexShrink: 0,
-            color: '#fff',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          Item {i}
-        </li>
-      ))}
-    </ul>
-  );
-};
+import { useState } from "react";
+import "../../styles/carrousel/carrousel.css"
 
+function Carrousel({imgen})  {
+const [currentImagen, setCurrentImagen] = useState(0)
+const long = imgen?.length
+function Back() {
+    setCurrentImagen(currentImagen === long - 1 ? 0 : currentImagen + 1)
+}
+
+function Foward(params) {
+    
+}
+
+
+
+        return (
+          <div className="CarrouselContainer">
+            <button className="buttonCarrousel" onClick={Back}>back</button>
+            {imgen.map((img, index)=>{
+                return(<div>
+
+                    {currentImagen === index &&(
+                        <img key={index} src={img}/>
+                    )}
+                        </div>)
+})}
+
+<button className="buttonCarrousel" >foward</button>
+            </div>
+        );
+    
+}
 export default Carrousel;

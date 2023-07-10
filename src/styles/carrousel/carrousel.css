@@ -1,5 +1,19 @@
+.CarrouselContainer{
+   display: flex;
+   flex-direction: row;
+}
+.ImageCarrousel{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .carrousel1{
     position: relative;
     background: beige;
     width: 100%;
+}
+
+.buttonCarrousel{
+    background-color: transparent;
 }
