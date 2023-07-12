@@ -1,7 +1,7 @@
 .logo1 {
   display: inline-flex;
   background: linear-gradient(to bottom, #f2ced8, #cea6b1);
-  width: 150px;
+ min-width: 150px;
   height: 150px;
   border-radius: 50%;
   text-align: center;
@@ -10,4 +10,13 @@
   font-weight: 300;
   font-size: 25px;
   justify-content: center;
+  box-shadow: transparent 0 0 0 3px, rgb(18 18 18 / 51%) 0 6px 20px;
+  margin-left: 5%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.logo1:hover {
+  box-shadow: transparent 0 0 0 3px, #cea6b1 0 0 0 3px;
+  transition: 0.5s;
+
 }

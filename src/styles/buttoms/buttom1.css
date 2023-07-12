@@ -30,8 +30,8 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   font-family: 'Raleway', sans-serif;
-  height: 80px;
-
+  min-height: 50px;
+  min-width: 80px;
 }
 
 .buttom1:hover {
