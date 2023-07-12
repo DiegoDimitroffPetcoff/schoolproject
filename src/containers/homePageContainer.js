@@ -19,7 +19,7 @@ function HomePage() {
       </div>
 
       <div className="body">
-        <Carrousel imagen={mockImagenes}></Carrousel>
+        <Carrousel className="body" imagen={mockImagenes}></Carrousel>
         </div>
 
       <div className="footer">footer</div>

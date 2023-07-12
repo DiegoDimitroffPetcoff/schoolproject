@@ -4,6 +4,11 @@
    width: 100%; /* Ancho del contenedor */
    height: 100%; /* Altura del contenedor */
    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+   justify-content: center;
+}
+
+.ImageCarrouselContainer{
+    width: 100%;
 }
 .ImageCarrousel{
     max-width: 100%; /* La imagen no sobrepasará el ancho del contenedor */
@@ -11,7 +16,7 @@
 }
 
 .buttonCarrousel{
-    position: relative;
+ 
     background: beige;
     width: 100%;
 }
