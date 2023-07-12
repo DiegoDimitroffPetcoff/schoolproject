@@ -1,31 +1,32 @@
 import React from 'react';
-import"../../styles/buttoms/buttom1.css";
+import Buttom from './Buttom';
+import '../../styles/navbar/navbar.css';
 
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className='Navbar1'>
       <ul>
-        <li className='buttom1'>
-         Inicio
+        <li >
+   <Buttom string="INICIO"></Buttom>
         </li>
         <li>
-         Ingresar
+        <Buttom string="INICIO"></Buttom>
         </li>
         <li>
-          Regístrate
+        <Buttom string="REGISTRARTE"></Buttom>
         </li>
         <li>
-  Quiénes somos
+        <Buttom string="QUIENES SOMOS"></Buttom>
         </li>
         <li>
-Agenda tu cita
+        <Buttom string="AGENDA TU CITA"></Buttom>
         </li>
         <li>
-    Diseños
+        <Buttom string="INICIO"></Buttom>
         </li>
         <li>
-          Escuela
+        <Buttom string="INICIO"></Buttom>
         </li>
       </ul>
     </nav>
