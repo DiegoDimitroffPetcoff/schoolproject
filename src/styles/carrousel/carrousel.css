@@ -1,14 +1,16 @@
 .CarrouselContainer{
    display: flex;
    flex-direction: row;
+   width: 100%; /* Ancho del contenedor */
+   height: 100%; /* Altura del contenedor */
+   overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
 }
 .ImageCarrousel{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    max-width: 100%; /* La imagen no sobrepasará el ancho del contenedor */
+    height: auto; /* La altura se ajustará proporcionalmente según el ancho */
 }
 
-.carrousel1{
+.buttonCarrousel{
     position: relative;
     background: beige;
     width: 100%;
@@ -16,4 +18,6 @@
 
 .buttonCarrousel{
     background-color: transparent;
+    width: 50px;
+    border: none;
 }
