@@ -1,30 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Asumiendo que estás utilizando React Router para la navegación
+import"../../styles/buttoms/buttom1.css";
+
 
 const Navbar = () => {
   return (
     <nav>
       <ul>
-        <li>
-          <Link to="/">Inicio</Link>
+        <li className='buttom1'>
+         Inicio
         </li>
         <li>
-          <Link to="/ingresar">Ingresar</Link>
+         Ingresar
         </li>
         <li>
-          <Link to="/registrate">Regístrate</Link>
+          Regístrate
         </li>
         <li>
-          <Link to="/quienes-somos">Quiénes somos</Link>
+  Quiénes somos
         </li>
         <li>
-          <Link to="/agenda-tu-cita">Agenda tu cita</Link>
+Agenda tu cita
         </li>
         <li>
-          <Link to="/disenos">Diseños</Link>
+    Diseños
         </li>
         <li>
-          <Link to="/escuela">Escuela</Link>
+          Escuela
         </li>
       </ul>
     </nav>
