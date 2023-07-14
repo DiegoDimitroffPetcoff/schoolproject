@@ -8,10 +8,10 @@
     align-items: center;
     min-height: 200px;
     border-bottom: solid black 3px;
-    box-shadow: transparent 0 0 0 3px, rgb(18 18 18 / 51%) 0 6px 20px;
-    
+    box-shadow: transparent 0 0 0 3px, rgb(18 18 18 / 51%) 0 6px 20px;    
  
 }
+
 .body{
     display: flex;
     background-color: #f2ced8;
@@ -22,3 +22,36 @@
     display: flex;
     height: 450px;
 }
+
+
+
+
+
+
+/* Dispositivos móviles (320px - 480px) */
+@media screen and (max-width: 480px) {
+    .head {
+        flex-direction: column;
+    }
+  }
+  
+  /* iPads, tablets (481px - 768px) */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .head {
+        flex-direction: column;
+    }
+  }
+
+
+
+
+
+
+
+
+
+  
+  /* Telas pequenas, laptops (769px - 1024px) */
+  @media screen and (min-width: 769px) {
+
+  }

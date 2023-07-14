@@ -1,23 +1,108 @@
-.Navbar1{
-    display: flex;
-    flex: 1 1 auto;
-    text-decoration: none;
-    justify-content: flex-end;
-
-}
-ul{
-    display: flex;
-    text-decoration: none;
 
 
-    padding: 30px;
-    color: #f2ced8; 
-    list-style: none;
-    
-    justify-content: flex-end;
-}
 
-li{
-    padding: 3px;
-    text-decoration: none;
-}
+
+/* Dispositivos móviles (320px - 480px) */
+@media screen and (max-width: 480px) {
+    .Navbar1{
+        display: none;
+    }
+    .NavbarBurguer{
+
+        display: flex;
+        /* flex: 1 1 auto; */
+        text-decoration: none;
+        justify-content: space-evenly;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;    
+        padding: 30px;
+        color: #f2ced8; 
+        list-style: none;        
+ 
+    }
+    li{
+        padding: 3px;
+        text-decoration: none;
+        margin: 10px;
+    }
+
+  }
+  
+  /* iPads, tablets (481px - 768px) */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .Navbar1{
+        display: none;
+    }
+    .NavbarBurguer{
+
+        display: flex;
+        /* flex: 1 1 auto; */
+        text-decoration: none;
+        justify-content: space-evenly;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;    
+        padding: 30px;
+        color: #f2ced8; 
+        list-style: none;        
+ 
+    }
+    li{
+        padding: 3px;
+        text-decoration: none;
+        margin: 10px;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+  
+  /* Telas pequenas, laptops (769px - 1024px) */
+  @media screen and (min-width: 769px) {
+
+    .Navbar1{
+        display: flex;
+        flex: 1 1 auto;
+        text-decoration: none;
+        justify-content: flex-end;
+    }
+    ul{
+        display: flex;
+        text-decoration: none;    
+        padding: 30px;
+        color: #f2ced8; 
+        list-style: none;        
+        justify-content: flex-end;
+    }
+    li{
+   
+        margin: 3px;
+    }
+
+
+    .NavbarBurguer{
+        display: none;
+    }
+  }

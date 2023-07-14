@@ -6,7 +6,6 @@
   padding-top: 30px;
 }
 .buttom1 {
-
   background-color: #fff;
   border-radius: 12px;
   box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
@@ -14,13 +13,9 @@
   color: #121212;
   cursor: pointer;
   font-family: Inter,sans-serif;
-
   font-weight: 700;
-
   line-height: 1;
-
   outline: none;
-
   text-align: center;
   text-decoration: none;
   transition: box-shadow .2s;
@@ -37,3 +32,8 @@
 .buttom1:hover {
   box-shadow: #cea6b1 0 0 0 3px, transparent 0 0 0 0;
 }
+
+@media screen and (max-width: 768px) {
+  .buttom1 { min-width: 280px;}
+}
+

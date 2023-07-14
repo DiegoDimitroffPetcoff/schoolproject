@@ -20,3 +20,20 @@
   transition: 0.5s;
 
 }
+/* Dispositivos móviles (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .logo1 {
+    margin-left: 0;
+  }
+}
+
+/* iPads, tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .logo1 {
+    margin-left: 0;
+  }
+}
+
+
+
+

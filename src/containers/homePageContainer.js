@@ -1,5 +1,6 @@
 import Logo from "../components/pure/Logo";
 import Navbar from "../components/pure/Navbar";
+import NavbarBurguer from "../components/pure/NavbarBurguer";
 import Carrousel from "../components/pure/Carrousel";
 import "../styles/homePageStyles.css";
 function HomePage() {
@@ -11,8 +12,10 @@ function HomePage() {
   return (
     <div className="homePageContainer">
       <div className="head">
-      <Logo></Logo> 
 
+        
+      <Logo></Logo> 
+      <NavbarBurguer></NavbarBurguer>
       <Navbar></Navbar>
       </div>
 
