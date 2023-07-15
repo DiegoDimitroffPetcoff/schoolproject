@@ -21,27 +21,27 @@ const NavbarBurger = () => {
  (    
  <nav className='NavbarBurguer' >
   <ul>
-   <li >
-    <Buttom string="INICIO"></Buttom>
-   </li>
-   <li>
+  <li >
    <Buttom string="INICIO"></Buttom>
-   </li>
-   <li>
-   <Buttom string="REGISTRARTE"></Buttom>
-   </li>
-   <li>
-   <Buttom string="QUIENES SOMOS"></Buttom>
-   </li>
-   <li>
-   <Buttom string="AGENDA TU CITA"></Buttom>
-   </li>
-   <li>
-   <Buttom string="INICIO"></Buttom>
-   </li>
-   <li>
-   <Buttom string="INICIO"></Buttom>
-   </li>
+        </li>
+        <li>
+        <Buttom string="INGRESAR"></Buttom>
+        </li>
+        <li>
+        <Buttom string="REGISTRARTE"></Buttom>
+        </li>
+        <li>
+        <Buttom string="QUIENES SOMOS"></Buttom>
+        </li>
+        <li>
+        <Buttom string="AGENDA TU CITA"></Buttom>
+        </li>
+        <li>
+        <Buttom string="DISEÑOS"></Buttom>
+        </li>
+        <li>
+        <Buttom string="ESCUELA"></Buttom>
+        </li>
  </ul>
 </nav>)
 

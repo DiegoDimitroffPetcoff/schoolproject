@@ -11,7 +11,7 @@ const Navbar = () => {
    <Buttom string="INICIO"></Buttom>
         </li>
         <li>
-        <Buttom string="INICIO"></Buttom>
+        <Buttom string="INGRESAR"></Buttom>
         </li>
         <li>
         <Buttom string="REGISTRARTE"></Buttom>
@@ -23,10 +23,10 @@ const Navbar = () => {
         <Buttom string="AGENDA TU CITA"></Buttom>
         </li>
         <li>
-        <Buttom string="INICIO"></Buttom>
+        <Buttom string="DISEÑOS"></Buttom>
         </li>
         <li>
-        <Buttom string="INICIO"></Buttom>
+        <Buttom string="ESCUELA"></Buttom>
         </li>
       </ul>
     </nav>

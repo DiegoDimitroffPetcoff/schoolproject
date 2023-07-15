@@ -5,9 +5,11 @@ import Carrousel from "../components/pure/Carrousel";
 import "../styles/homePageStyles.css";
 function HomePage() {
   const mockImagenes = [
-		'https://picsum.photos/id/1020/900',
-		'https://picsum.photos/id/1025/900',
-		'https://picsum.photos/id/1010/900',
+    "https://picsum.photos/id/31/2000/450",
+    "https://picsum.photos/id/365/2000/450",
+    "https://picsum.photos/id/373/2000/450",
+    "https://picsum.photos/id/341/2000/450",
+
 	];
   return (
     <div className="homePageContainer">
