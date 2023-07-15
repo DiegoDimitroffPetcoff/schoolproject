@@ -3,6 +3,7 @@ import Navbar from "../components/pure/Navbar";
 import NavbarBurguer from "../components/pure/NavbarBurguer";
 import Carrousel from "../components/pure/Carrousel";
 import "../styles/homePageStyles.css";
+import WhoWeAre from "./whoWeAreContainer";
 function HomePage() {
   const mockImagenes = [
     "https://picsum.photos/id/31/2000/450",
@@ -23,6 +24,9 @@ function HomePage() {
 
       <div className="body">
         <Carrousel className="body" imagen={mockImagenes}></Carrousel>
+        </div>
+        <div className="sectionOne">
+        <WhoWeAre/>
         </div>
 
       <div className="footer">footer</div>
