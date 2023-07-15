@@ -7,8 +7,7 @@
     display: flex;
     align-items: center;
     min-height: 200px;
-    border-bottom: solid black 3px;
-    box-shadow: transparent 0 0 0 3px, rgb(18 18 18 / 51%) 0 6px 20px;    
+    border-bottom-style: inset;
  
 }
 

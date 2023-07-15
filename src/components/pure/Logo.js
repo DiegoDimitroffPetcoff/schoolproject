@@ -1,7 +1,10 @@
 import "../../styles/logos/logo1.css"
 function Logo() {
-   return ( <div className="logo1">
+   const handleClick = () => {
+      window.location.href = '/';
+    };
+   return ( <i className="logo1" onClick={handleClick}>
    Zucarelita. Nails
-   </div>)
+   </i>)
 }
 export default Logo;

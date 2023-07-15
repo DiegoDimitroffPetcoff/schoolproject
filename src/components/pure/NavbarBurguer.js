@@ -6,12 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const NavbarBurger = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true);
+
+  function openBar() {
+    setIsOpen( !isOpen) 
+  }
   return (
     <>
       
  {isOpen     ?
- (<FontAwesomeIcon className='NavbarBurguer' icon={faBars} /> ) :
+ (<button onClick={openBar} className='NavbarBurguerIcon'>   <FontAwesomeIcon icon={faBars} style={{ color: '#f2ced8' }} className="fa-4x" /> </button>) :
 
 
  (    
