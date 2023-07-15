@@ -1,12 +1,14 @@
-import Buttom from "../components/pure/Buttom"
+import Buttom2 from "../components/pure/Buttom2"
+import "../styles/whoWeAre.css"
 function WhoWeAre() {
     return(
-        <div>
-            <h1>Apasionados por tus uñas</h1>
-            <p>Nuestro trabajo es el de hacer y enseñar.. aprender y compartir</p>
-            <p>Mi nombre es Vanina Zucarelli, trabajando y dirigiendo es hermoso emprendimiento desde hace mas de 10 años, quiero darte la bienvenida, espero puedas encontrar este sitio interesante, en donde podras ver los trabajos realizados tanto por mi como por mis alumnos</p>
-            <p>Animate a unirte a nuestro grupo! </p>
-            <Buttom string="UNETE A NUESTRA ESCUELA!"></Buttom>
+        <div className="whoWeAreContainer">
+            <h1 className="title">Apasionados por tus uñas</h1>
+            <p className="subTitle">Nuestro trabajo es el de hacer y enseñar.. aprender y compartir</p>
+            <p className="text">Mi nombre es Vanina Zucarelli, trabajando y dirigiendo es hermoso emprendimiento desde hace mas de 10 años, quiero darte la bienvenida, espero puedas encontrar este sitio interesante, en donde podras ver los trabajos realizados tanto por mi como por mis alumnos</p>
+            <p className="text">Animate a formar parte de este grupo! </p>
+            <p className="text"><Buttom2 string="UNETE A NUESTRA ESCUELA!"></Buttom2></p>
+            
         </div>
     )
 }
