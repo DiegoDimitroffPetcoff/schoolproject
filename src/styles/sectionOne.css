@@ -27,39 +27,33 @@
 @media screen and (max-width: 480px) {
   .SectionContainerOne {
     padding: 0;
+    min-height:auto;
   }
-
   .title {
-
     font-size: 20px;
   }
   .subTitle {
-
     font-size: 11px;
   }
   .text {
-
     font-size: 10px;
+    margin-top: 6%;
   }
 }
 
 /* iPads, tablets (481px - 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .SectionContainerOne {
-    padding: 5% 0;
+    padding:0;
+    min-height: auto;
   }
-
   .title {
-
     font-size: 20px;
   }
   .subTitle {
-
     font-size: 11px;
   }
   .text {
-
     font-size: 10px;
   }
-
 }

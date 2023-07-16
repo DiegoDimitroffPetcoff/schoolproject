@@ -1,0 +1,9 @@
+
+.FooterContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 15%;
+    background-color: rgba(0, 0, 0, 0.075);
+    color: aliceblue;
+    justify-content: space-evenly;
+}

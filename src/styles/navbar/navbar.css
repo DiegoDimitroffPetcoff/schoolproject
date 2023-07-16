@@ -25,7 +25,8 @@
         text-decoration: none;    
         padding: 30px;
         color: #f2ced8; 
-        list-style: none;        
+        list-style: none;   
+        background-color: #f2ced899;     
  
     }
     li{
@@ -67,7 +68,8 @@
         text-decoration: none;    
         padding: 30px;
         color: #f2ced8; 
-        list-style: none;        
+        list-style: none;    
+        background-color: #f2ced899;    
  
     }
     li{

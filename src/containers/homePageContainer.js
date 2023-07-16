@@ -6,6 +6,7 @@ import "../styles/homePageStyles.css";
 import WhoWeAre from "./whoWeAreContainer";
 import SchoolLandingPage from "./SchoolLandingPageContainer";
 import NewsLetter from "./NewsLetterContainer";
+import Footer from "./footerContainer";
 function HomePage() {
   const mockImagenes = [
     "https://picsum.photos/id/31/2000/450",
@@ -16,29 +17,30 @@ function HomePage() {
 	];
   return (
     <div className="homePageContainer">
-      <div className="head">
-
-        
+      <header className="head">        
       <Logo></Logo> 
-      <NavbarBurguer></NavbarBurguer>
-      <Navbar></Navbar>
-      </div>
+        <NavbarBurguer></NavbarBurguer>
+      <Navbar></Navbar>   
+      </header>
 
       <section className="body">
         <Carrousel className="body" imagen={mockImagenes}></Carrousel>
-        </section>
-        <section className="sectionOne">
+      </section>
+      <section className="sectionOne">
         <WhoWeAre/>
-        </section>
-        <section className="sectionOne">
+      </section>
+      <section className="sectionOne">
         <SchoolLandingPage/>
-        </section>
-        <section className="sectionOne">
+      </section>
+      <section className="sectionOne">
         <NewsLetter/>
-        </section>
+      </section>
 
-      <div className="footer">footer</div>
-      <div className="body">footer12</div>
+      <footer className="sectionOne">
+        <Footer/>
+      </footer>
+
+
     </div>
   );
 }
