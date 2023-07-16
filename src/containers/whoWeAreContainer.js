@@ -1,8 +1,9 @@
 import Buttom2 from "../components/pure/Buttom2"
-import "../styles/whoWeAre.css"
+import "../styles/sectionOne.css"
 function WhoWeAre() {
+    
     return(
-        <div className="whoWeAreContainer">
+        <div className="SectionContainerOne">
             <h1 className="title">Apasionados por tus uñas</h1>
             <p className="subTitle">Nuestro trabajo es el de hacer y enseñar.. aprender y compartir</p>
             <p className="text">Mi nombre es Vanina Zucarelli, trabajando y dirigiendo es hermoso emprendimiento desde hace mas de 10 años, quiero darte la bienvenida, espero puedas encontrar este sitio interesante, en donde podras ver los trabajos realizados tanto por mi como por mis alumnos</p>

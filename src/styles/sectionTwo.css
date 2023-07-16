@@ -1,0 +1,27 @@
+
+.SectionContainer{
+    padding: 2% 15%;
+    background-color: #cea6b1;;
+}
+.BorderContainer{
+    border: #f2ced8 solid 0.8px;
+    padding: 20px;
+}
+.titleTwo{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+.subTitleTwo{
+    font-family: 'Raleway', sans-serif;   
+    text-align: center;
+    color: #343a40;
+    font-size: 20px;
+}
+.textTwo{
+    font-family: 'Raleway', sans-serif;  
+    text-align: center;
+    color: #343a40;
+    font-size: 15px;
+}

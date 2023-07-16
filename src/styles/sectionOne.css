@@ -1,0 +1,65 @@
+.SectionContainerOne {
+  padding: 5% 15%;
+  background-color: white;
+  min-height: 400px;
+}
+
+.title {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: #cea6b1;
+  font-size: 30px;
+}
+.subTitle {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: #495057;
+  font-size: 20px;
+}
+.text {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: #495057;
+  font-size: 15px;
+}
+
+/* Dispositivos móviles (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .SectionContainerOne {
+    padding: 0;
+  }
+
+  .title {
+
+    font-size: 20px;
+  }
+  .subTitle {
+
+    font-size: 11px;
+  }
+  .text {
+
+    font-size: 10px;
+  }
+}
+
+/* iPads, tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .SectionContainerOne {
+    padding: 5% 0;
+  }
+
+  .title {
+
+    font-size: 20px;
+  }
+  .subTitle {
+
+    font-size: 11px;
+  }
+  .text {
+
+    font-size: 10px;
+  }
+
+}
