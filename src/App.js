@@ -4,6 +4,7 @@ import "./App.css";
 
 import HomePage from "./containers/homePageContainer";
 import Login from "./routes/login";
+import Register from "./routes/register";
 
 
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
       </Routes>
     </div>
   );

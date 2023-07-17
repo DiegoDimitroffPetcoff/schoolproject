@@ -5,7 +5,7 @@ import "../../styles/navbar/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-const NavbarBurger = () => {
+const NavbarBurguer = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   function openBar() {
@@ -55,4 +55,4 @@ const NavbarBurger = () => {
   );
 };
 
-export default NavbarBurger;
+export default NavbarBurguer;

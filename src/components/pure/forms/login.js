@@ -4,6 +4,9 @@ import { useState } from "react";
 import "../../../styles/form/formContainer.css";
 
 import Buttom1 from "../Buttom2";
+import Logo from "../Logo";
+import NavbarBurguer from "../NavbarBurguer";
+import Navbar from "../Navbar";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -17,6 +20,15 @@ function LoginForm() {
   };
 
   return (
+    <div>
+      <header className="head">
+        <Logo></Logo>
+        <NavbarBurguer></NavbarBurguer>
+        <Navbar></Navbar>
+      </header>
+
+
+
     <form className="formContainer">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -44,6 +56,7 @@ function LoginForm() {
         </div>
       </Form>
     </form>
+    </div>
   );
 }
 
