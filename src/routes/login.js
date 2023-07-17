@@ -1,10 +1,20 @@
-import LoginForm from "../components/pure/forms/login"
+import LoginForm from "../components/forms/login";
+import Logo from "../components/pure/Logo";
+import NavbarBurguer from "../components/pure/NavbarBurguer";
+import Navbar from "../components/pure/Navbar";
 
 function Login(params) {
-    return(
-        <div>
-            <LoginForm></LoginForm>
-        </div>
-    )
+  return (
+    <div>
+        
+      <header className="head">
+        <Logo></Logo>
+        <NavbarBurguer></NavbarBurguer>
+        <Navbar></Navbar>
+      </header>
+      <h1>INGRESAR</h1>
+      <LoginForm></LoginForm>
+    </div>
+  );
 }
-export default Login
+export default Login;

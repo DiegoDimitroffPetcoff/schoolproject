@@ -1,10 +1,12 @@
-import "../../styles/logos/logo1.css"
+import { Link } from "react-router-dom";
+
+import "../../styles/logos/logo1.css";
+
 function Logo() {
-   const handleClick = () => {
-      window.location.href = '/';
-    };
-   return ( <i className="logo1" onClick={handleClick}>
-   Zucarelita. Nails
-   </i>)
+  return (
+    <Link to="/" className="logo1">
+      Zucarellita. Nails
+    </Link>
+  );
 }
 export default Logo;

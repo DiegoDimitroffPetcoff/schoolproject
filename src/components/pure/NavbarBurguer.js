@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import Buttom from "./Buttom";
-import Buttom2 from "./Buttom2";
-import "../../styles/navbar/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+import "../../styles/navbar/navbar.css";
+
+import Buttom2 from "./Buttom2";
+import NavBarPure from "./NavbarPure";
 
 const NavbarBurguer = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -24,30 +26,14 @@ const NavbarBurguer = () => {
         </button>
       ) : (
         <nav className="NavbarBurguer">
-        
           <ul>
-          <Buttom2 string="X" action={()=>{setIsOpen(!isOpen);}}></Buttom2>
-            <li>
-              <Buttom string="INICIO"></Buttom>
-            </li>
-            <li>
-              <Buttom string="INGRESAR"></Buttom>
-            </li>
-            <li>
-              <Buttom string="REGISTRARTE"></Buttom>
-            </li>
-            <li>
-              <Buttom string="QUIENES SOMOS"></Buttom>
-            </li>
-            <li>
-              <Buttom string="AGENDA TU CITA"></Buttom>
-            </li>
-            <li>
-              <Buttom string="DISEÑOS"></Buttom>
-            </li>
-            <li>
-              <Buttom string="ESCUELA"></Buttom>
-            </li>
+            <Buttom2
+              string="X"
+              action={() => {
+                setIsOpen(!isOpen);
+              }}
+            ></Buttom2>
+            <NavBarPure></NavBarPure>
           </ul>
         </nav>
       )}
