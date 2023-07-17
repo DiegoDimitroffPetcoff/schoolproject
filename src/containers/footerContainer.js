@@ -1,3 +1,4 @@
+import { FaInstagram,FaFacebook, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 
 import "../styles/footer.css"
 
@@ -6,12 +7,10 @@ function Footer() {
     return(
     
         <div className="FooterContainer">
-        <p className="subTitle">Telefono</p>
-            <p className="subTitle">Telefono</p>
-   
-            <p className="subTitle">Calafate</p>
-            <p className="subTitle">Argentina</p>
-           
+        <p className="subTitle"><FaInstagram/></p>
+        <p className="subTitle"><FaFacebook/></p>
+        <p className="subTitle"><FaMapMarkerAlt/></p>
+        <p className="subTitle"><FaPhoneAlt/></p>
             
         </div>
       

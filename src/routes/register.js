@@ -1,9 +1,9 @@
-import LoginForm from "../components/forms/login";
+import RegisterForm from "../components/forms/register";
 import Logo from "../components/pure/Logo";
 import NavbarBurguer from "../components/pure/NavbarBurguer";
 import Navbar from "../components/pure/Navbar";
 
-function Login(params) {
+function Register(params) {
   return (
     <div>
       <header className="head">
@@ -12,8 +12,8 @@ function Login(params) {
         <Navbar></Navbar>
       </header>
       <h1 className="title">REGISTRARSE</h1>
-      <LoginForm></LoginForm>
+      <RegisterForm></RegisterForm>
     </div>
   );
 }
-export default Login;
+export default Register;

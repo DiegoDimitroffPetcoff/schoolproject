@@ -6,56 +6,45 @@ import "../../styles/form/formContainer.css";
 import Buttom1 from "../pure/Buttom2";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
-    console.log(`Email: ${email}`);
+    event.preventDefault();
+    console.log("Nombre:", name);
+
+    console.log("Contraseña:", password);
   };
 
   return (
-    <form className="formContainer">
-      <Form onSubmit={handleSubmit}>
+
+      <Form className="formContainer" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="text"
-            placeholder="Nombre Completo"
-            onChange={handleEmailChange}
+            placeholder="Usuario"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
-            type="text"
-            placeholder="Apellido"
-            onChange={handleEmailChange}
+            type="password"
+            placeholder="Constraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="email"
-            placeholder="Email"
-            onChange={handleEmailChange}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check
-            type="checkbox"
-            label="Quiero Recibir Novedades y Ofertas disponibles"
-          />
-        </Form.Group>
-        <div className="FormButtom">
-          <Buttom1 string="ENVIAR" type="submit">
+   
+          <Buttom1 variant="primary" string="ENVIAR" type="submit">
             ENVIAR
           </Buttom1>
-        </div>
+       
       </Form>
-    </form>
+
   );
 }
 
