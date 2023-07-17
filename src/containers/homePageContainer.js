@@ -2,45 +2,44 @@ import Logo from "../components/pure/Logo";
 import Navbar from "../components/pure/Navbar";
 import NavbarBurguer from "../components/pure/NavbarBurguer";
 import Carrousel from "../components/pure/Carrousel";
-import "../styles/homePageStyles.css";
 import WhoWeAre from "./whoWeAreContainer";
 import SchoolLandingPage from "./SchoolLandingPageContainer";
 import NewsLetter from "./NewsLetterContainer";
 import Footer from "./footerContainer";
+
+import "../styles/homePageStyles.css";
+
 function HomePage() {
   const mockImagenes = [
     "https://picsum.photos/id/31/2000/450",
     "https://picsum.photos/id/365/2000/450",
     "https://picsum.photos/id/373/2000/450",
     "https://picsum.photos/id/341/2000/450",
-
-	];
+  ];
   return (
     <div className="homePageContainer">
-      <header className="head">        
-      <Logo></Logo> 
+      <header className="head">
+        <Logo></Logo>
         <NavbarBurguer></NavbarBurguer>
-      <Navbar></Navbar>   
+        <Navbar></Navbar>
       </header>
 
       <section className="body">
         <Carrousel className="body" imagen={mockImagenes}></Carrousel>
       </section>
       <section className="sectionOne">
-        <WhoWeAre/>
+        <WhoWeAre />
       </section>
       <section className="sectionOne">
-        <SchoolLandingPage/>
+        <SchoolLandingPage />
       </section>
       <section className="sectionOne">
-        <NewsLetter/>
+        <NewsLetter />
       </section>
 
       <footer className="sectionOne">
-        <Footer/>
+        <Footer />
       </footer>
-
-
     </div>
   );
 }

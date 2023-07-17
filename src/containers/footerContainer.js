@@ -1,6 +1,6 @@
 
-import Buttom2 from "../components/pure/Buttom2"
 import "../styles/footer.css"
+
 function Footer() {
     
     return(
