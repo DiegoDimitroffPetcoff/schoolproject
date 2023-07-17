@@ -1,6 +1,6 @@
-import Buttom1 from "../Buttom2";
+import Buttom1 from "../pure/Buttom2";
 import Form from "react-bootstrap/Form";
-import "../../../styles/form/formContainer.css"
+import "../../styles/form/formContainer.css"
 import { useState } from "react";
 
 function NewsLetterForm() {

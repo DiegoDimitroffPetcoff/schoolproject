@@ -11,7 +11,7 @@ function Login(params) {
         <NavbarBurguer></NavbarBurguer>
         <Navbar></Navbar>
       </header>
-      <h1>REGISTRARSE</h1>
+      <h1 className="title">REGISTRARSE</h1>
       <LoginForm></LoginForm>
     </div>
   );

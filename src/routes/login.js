@@ -3,6 +3,7 @@ import Logo from "../components/pure/Logo";
 import NavbarBurguer from "../components/pure/NavbarBurguer";
 import Navbar from "../components/pure/Navbar";
 
+
 function Login(params) {
   return (
     <div>
@@ -12,7 +13,7 @@ function Login(params) {
         <NavbarBurguer></NavbarBurguer>
         <Navbar></Navbar>
       </header>
-      <h1>INGRESAR</h1>
+      <h1 className="title">INGRESAR</h1>
       <LoginForm></LoginForm>
     </div>
   );

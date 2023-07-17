@@ -1,6 +1,6 @@
 import "../styles/sectionOne.css";
 
-import NewsLetterForm from "../components/pure/forms/newsLetterForm";
+import NewsLetterForm from "../components/forms/newsLetterForm";
 
 function NewsLetter() {
   return (
