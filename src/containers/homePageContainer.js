@@ -18,6 +18,7 @@ function HomePage() {
   ];
   return (
     <div className="homePageContainer">
+      
       <header className="head">
         <Logo></Logo>
         <NavbarBurguer></NavbarBurguer>
