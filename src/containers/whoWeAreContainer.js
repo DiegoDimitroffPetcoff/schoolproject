@@ -19,9 +19,9 @@ function WhoWeAre() {
   };
 
   return (
-    <div className="SectionContainerOne">
+    <>
     {logged ? (
-      <>
+      <div className="SectionContainerOne">
         <h1 className="title">{title}</h1>
         <p className="subTitle">
           {subTitle}
@@ -34,7 +34,7 @@ function WhoWeAre() {
           <Buttom2 string="UNETE A NUESTROS TALLERES!" />
         </p>
         <img className="whoWeArePicture" alt="imagen de vanina zucarelli" src="/vaninazucarelli.png" />
-      </>
+      </div>
      
     ) : 
     
@@ -45,11 +45,12 @@ function WhoWeAre() {
     
     
     
-    (<div className="SectionContainerOne">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicName">
-          <Form.Label>Title</Form.Label>
-          <Form.Control
+    (
+      <Form className="formEditable" onSubmit={handleSubmit}>
+        <Form.Group className="formEditable" controlId="formBasicName">
+      
+          <textarea
+          className="textEditable"
             type="text"
             placeholder={title}
             value={title}
@@ -57,9 +58,10 @@ function WhoWeAre() {
           />
         </Form.Group>
   
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Subtitle</Form.Label>
-          <Form.Control
+        <Form.Group className="formEditable" controlId="formBasicEmail">
+        
+          <textarea
+          className="textEditable"
             type="text"
             placeholder={subTitle}
             value={subTitle}
@@ -67,9 +69,10 @@ function WhoWeAre() {
           />
         </Form.Group>
   
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control
+        <Form.Group className="formEditable" controlId="formBasicPassword">
+
+          <textarea
+          className="textEditable"
             type="text"
             placeholder={text}
             value={text}
@@ -81,10 +84,10 @@ function WhoWeAre() {
           Aceptar
         </Button>
       </Form>
-      </div>
+   
     )}
      {adm ? (<Buttom2 string="editar" action={() => { setLogged(!logged) }}/>) : ("") }
-  </div>
+  </>
   );
 }
 export default WhoWeAre;

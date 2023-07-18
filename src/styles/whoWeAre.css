@@ -5,10 +5,32 @@
   border: solid #cea6b1;
   padding: 2px;
 }
+.formEditable{
+  width: 100%;
+  padding:0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.textEditable{
+  resize: vertical;
+  width: 600px;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: #495057;
+
+    color: #cea6b1;
+    font-size: 30px;
+
+}
 /* Dispositivos móviles (320px - 480px) */
 @media screen and (max-width: 480px) {
   .whoWeArePicture{
     width: 50%;
+ }
+ .textEditable{
+  width: 400px;
  }
 }
