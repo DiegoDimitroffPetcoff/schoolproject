@@ -1,4 +1,5 @@
 import "../styles/sectionOne.css";
+import "../styles/whoWeAre.css";
 
 import Buttom2 from "../components/pure/Buttom2";
 
@@ -19,6 +20,7 @@ function WhoWeAre() {
       <p className="text">
         <Buttom2 string="UNETE A NUESTROS TALLERES!"></Buttom2>
       </p>
+      <img className="whoWeArePicture" src="/vaninazucarelli.png"/>
     </div>
   );
 }

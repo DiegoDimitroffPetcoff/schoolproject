@@ -24,7 +24,8 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Buttom string="QUIENES SOMOS"></Buttom>
+      <Link to="/whoweare">
+        <Buttom  string="QUIENES SOMOS"></Buttom> </Link>
       </li>
       <li>
         <Buttom string="AGENDA TU CITA"></Buttom>

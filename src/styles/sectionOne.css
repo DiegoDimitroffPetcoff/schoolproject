@@ -2,7 +2,11 @@
   padding: 5% 15%;
   background-color: white;
   min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 .title {
   font-family: "Raleway", sans-serif;
@@ -25,10 +29,7 @@
 
 /* Dispositivos móviles (320px - 480px) */
 @media screen and (max-width: 480px) {
-  .SectionContainerOne {
-    padding: 0;
-    min-height:auto;
-  }
+
   .title {
     font-size: 20px;
   }
@@ -43,10 +44,7 @@
 
 /* iPads, tablets (481px - 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .SectionContainerOne {
-    padding:0;
-    min-height: auto;
-  }
+
   .title {
     font-size: 20px;
   }

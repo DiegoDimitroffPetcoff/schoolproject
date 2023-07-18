@@ -1,27 +1,50 @@
-import Buttom1 from "../pure/Buttom2";
-import Form from "react-bootstrap/Form";
-import "../../styles/form/formContainer.css"
 import { useState } from "react";
+import Form from "react-bootstrap/Form";
+
+import Buttom1 from "../pure/Buttom2";
+
+import "../../styles/form/formContainer.css"
+
 
 function NewsLetterForm() {
+  const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-      };
+    const [checked,setChecked] = useState(false)
+ 
 
     const handleSubmit = (event) => {
-        event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+        event.preventDefault(); 
+        console.log(`Name: ${name}`);
         console.log(`Email: ${email}`);
+        console.log(`Checked: ${checked}`);
       };
 
 
 
   return (
-    <form  className="formContainer">
-    <Form onSubmit={handleSubmit}>
+
+    <Form className="formContainer" onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+
+      <Form.Label>Nombre Completo</Form.Label>
+        <Form.Control 
+        type="text" 
+        placeholder="Nombre completo" 
+        value={name}
+        onChange={(e)=>setName(e.target.value)} 
+        />
+      </Form.Group>
+
+
+
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" onChange={handleEmailChange} />
+        <Form.Control 
+        type="email" 
+        placeholder="Enter email" 
+        value={email}
+        onChange={(e)=>setEmail(e.target.value)} 
+        />
         <Form.Text className="text-muted">
           No compartiremos tu email con nadie mas.
         </Form.Text>
@@ -31,13 +54,16 @@ function NewsLetterForm() {
         <Form.Check
           type="checkbox"
           label="Quiero Recibir Novedades y Ofertas disponibles"
+          value={checked}
+          onChange={()=>{setChecked(!checked)}}
         />
       </Form.Group>
-      <div className="FormButtom">
-      <Buttom1 string="ENVIAR"  type="submit">ENVIAR</Buttom1>
-      </div>
+
+     
+      <Buttom1 className="FormButtom" string="ENVIAR"  type="submit"/>
+      
     </Form>
-    </form>
+
   );
 }
 

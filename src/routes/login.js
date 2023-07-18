@@ -2,10 +2,12 @@ import LoginForm from "../components/forms/login";
 import Logo from "../components/pure/Logo";
 import NavbarBurguer from "../components/pure/NavbarBurguer";
 import Navbar from "../components/pure/Navbar";
-import RegisterForm2 from "../components/forms/addMessage";
+
 
 
 function Login(params) {
+
+
   return (
     <div>
         

@@ -10,11 +10,26 @@ function LoginForm() {
   const [password, setPassword] = useState("");
 
 
+  const mockLogin =     {name: "Diego",
+  password:"123"}    ;
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Nombre:", name);
+    console.log("name:", name);
+    console.log("password:", password);
 
-    console.log("Contraseña:", password);
+if (name == mockLogin.name && password === mockLogin.password) {
+  console.log("Logged Successful");
+
+} else {
+  console.log("Password or User incorrect");
+
+}
+
+
+
+
   };
 
   return (
@@ -39,9 +54,7 @@ function LoginForm() {
         </Form.Group>
 
    
-          <Buttom1 variant="primary" string="ENVIAR" type="submit">
-            ENVIAR
-          </Buttom1>
+          <Buttom1 variant="primary" string="ENVIAR" type="submit"/>
        
       </Form>
 
