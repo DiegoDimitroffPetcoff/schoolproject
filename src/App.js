@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useState, useContext } from "react";
 
 import "./App.css";
 
@@ -7,18 +8,22 @@ import Login from "./routes/login";
 import Register from "./routes/register";
 import WhoWeAre from "./routes/whoWeAre";
 
+import AuthContext from "./contexts/authContext";
 
 
 function App() {
+  const  [logged, setLogged] = useState(true)
+  const  [adm, setAdm] = useState(true)
   return (
-    <div>
+    <><AuthContext.Provider value={{logged,setLogged,adm, setAdm}}>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/whoweare" element={<WhoWeAre/>} />
       </Routes>
-    </div>
+      </AuthContext.Provider>
+    </>
   );
 }
 

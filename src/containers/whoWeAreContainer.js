@@ -1,22 +1,28 @@
 import { Form, Button } from "react-bootstrap";
+import { useState, useContext } from "react";
 
 import "../styles/sectionOne.css";
 import "../styles/whoWeAre.css";
 
 import Buttom2 from "../components/pure/Buttom2";
 import Buttom1 from "../components/pure/Buttom";
-import { useState } from "react";
+
+import authContext from "../contexts/authContext";
+
 
 function WhoWeAre() {
-  const  [logged, setLogged] = useState(true)
-  const  [adm, setAdm] = useState(true)
+ const  [logged, setLogged] = useState(true)
+  //const  [adm, setAdm] = useState(true)
   const [title, setTitle] = useState("Apasionados por tus uñas");
   const [subTitle, setSubTitle] = useState("Nuestro trabajo es el de hacer y enseñar.. aprender y compartir");
   const [text, setText] = useState("Mi nombre es Vanina Zucarelli, trabajando y dirigiendo este hermoso emprendimiento desde hace más de 10 años. Quiero darte la bienvenida,espero puedas encontrar este sitio interesante, donde podrás ver los trabajos realizados tanto por mí como por mis alumnos.");
 
+
+  const {adm, setAdm} = useContext(authContext)
+  console.log(adm);
   const handleSubmit = (event) => {
     event.preventDefault();
-
+console.log(adm);
   };
 
   return (
