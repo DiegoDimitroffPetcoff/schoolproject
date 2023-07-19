@@ -12,7 +12,7 @@ import AuthContext from "./contexts/authContext";
 
 
 function App() {
-  const  [logged, setLogged] = useState(true)
+  const  [logged, setLogged] = useState(false)
   const  [adm, setAdm] = useState(true)
   return (
     <><AuthContext.Provider value={{logged,setLogged,adm, setAdm}}>

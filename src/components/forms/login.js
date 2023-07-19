@@ -1,23 +1,24 @@
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import "../../styles/form/formContainer.css";
 
 import Buttom1 from "../pure/Buttom2";
+import AuthContext from "../../contexts/authContext";
 
 function LoginForm() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
 
-  const mockLogin =     {name: "Diego",
-  password:"123"}    ;
 
+const {logged,setLogged} = useContext(AuthContext)
+  const mockLogin =     {name: "Adm",
+  password:"Adm"}    ;
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("name:", name);
-    console.log("password:", password);
+setLogged(!logged)
 
 if (name == mockLogin.name && password === mockLogin.password) {
   console.log("Logged Successful");
