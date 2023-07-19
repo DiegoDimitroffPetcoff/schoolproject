@@ -6,11 +6,13 @@ import "../../styles/form/formContainer.css";
 import Buttom1 from "../pure/Buttom2";
 import AuthContext from "../../contexts/authContext";
 
+
 import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [wrongPassword, setWrongPassword] = useState(false);
 
   const navigate = useNavigate(); 
 
@@ -29,7 +31,7 @@ if (name === mockLogin.name && password === mockLogin.password) {
   navigate("/");
 
 } else {
-  console.log("Password or User incorrect");
+setWrongPassword(!wrongPassword)
 
 }
 
@@ -39,7 +41,7 @@ if (name === mockLogin.name && password === mockLogin.password) {
   };
 
   return (
-
+<>
       <Form className="formContainer" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
@@ -47,6 +49,7 @@ if (name === mockLogin.name && password === mockLogin.password) {
             placeholder="Usuario"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </Form.Group>
 
@@ -56,14 +59,18 @@ if (name === mockLogin.name && password === mockLogin.password) {
             placeholder="Constraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
+          
         </Form.Group>
+
 
    
           <Buttom1 variant="primary" string="ENVIAR" type="submit"/>
        
       </Form>
-
+      {!wrongPassword ? null :(<h1 className="title">Usuario o Constraseña</h1>)}
+</>
   );
 }
 
