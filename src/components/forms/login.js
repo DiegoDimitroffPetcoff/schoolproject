@@ -6,9 +6,13 @@ import "../../styles/form/formContainer.css";
 import Buttom1 from "../pure/Buttom2";
 import AuthContext from "../../contexts/authContext";
 
+import { useNavigate } from "react-router-dom";
+
 function LoginForm() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate(); 
 
 
 
@@ -22,6 +26,7 @@ setLogged(!logged)
 
 if (name == mockLogin.name && password === mockLogin.password) {
   console.log("Logged Successful");
+  navigate("/");
 
 } else {
   console.log("Password or User incorrect");
