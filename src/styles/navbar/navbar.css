@@ -27,6 +27,7 @@
         color: #f2ced8; 
         list-style: none;   
         background-color: #f2ced899;     
+        flex-wrap: wrap;
  
     }
     li{
@@ -70,6 +71,8 @@
         color: #f2ced8; 
         list-style: none;    
         background-color: #f2ced899;    
+        flex-wrap: wrap;
+ 
  
     }
     li{
@@ -113,6 +116,8 @@
         color: #f2ced8; 
         list-style: none;        
         justify-content: flex-end;
+        flex-wrap: wrap;
+ 
     }
     li{
    

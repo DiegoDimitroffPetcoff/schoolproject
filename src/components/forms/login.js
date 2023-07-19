@@ -24,7 +24,7 @@ const {logged,setLogged} = useContext(AuthContext)
     event.preventDefault();
 setLogged(!logged)
 
-if (name == mockLogin.name && password === mockLogin.password) {
+if (name === mockLogin.name && password === mockLogin.password) {
   console.log("Logged Successful");
   navigate("/");
 

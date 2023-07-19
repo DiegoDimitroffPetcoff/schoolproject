@@ -1,3 +1,5 @@
+import { useContext } from "react";
+
 import Logo from "../components/pure/Logo";
 import Navbar from "../components/pure/Navbar";
 import NavbarBurguer from "../components/pure/NavbarBurguer";
@@ -6,8 +8,12 @@ import WhoWeAre from "./whoWeAreContainer";
 import SchoolLandingPage from "./SchoolLandingPageContainer";
 import NewsLetter from "./NewsLetterContainer";
 import Footer from "./footerContainer";
+import Avatar from "../components/pure/Avatar";
 
 import "../styles/homePageStyles.css";
+
+import AuthContext from "../contexts/authContext";
+
 
 function HomePage() {
   const mockImagenes = [
@@ -16,13 +22,20 @@ function HomePage() {
     "https://picsum.photos/id/373/2000/450",
     "https://picsum.photos/id/341/2000/450",
   ];
+
+  const {logged} = useContext(AuthContext)
+  console.log(logged);
+
+
   return (
     <div className="homePageContainer">
       
       <header className="head">
         <Logo></Logo>
+        
         <NavbarBurguer></NavbarBurguer>
         <Navbar></Navbar>
+        {logged ? <Avatar></Avatar>: null}
       </header>
 
       <section className="body">
