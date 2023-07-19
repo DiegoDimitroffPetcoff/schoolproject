@@ -4,6 +4,7 @@ import "../styles/sectionOne.css";
 import "../styles/whoWeAre.css";
 
 import Buttom2 from "../components/pure/Buttom2";
+import Buttom1 from "../components/pure/Buttom";
 import { useState } from "react";
 
 function WhoWeAre() {
@@ -29,6 +30,7 @@ function WhoWeAre() {
         <p className="text">
      {text}
         </p>
+        {adm && logged ? (<Buttom1 string="EDITAR" action={() => { setLogged(!logged) }}/>) : ("") }
         <p className="text">¡Anímate a formar parte de este grupo!</p>
         <p className="text">
           <Buttom2 string="UNETE A NUESTROS TALLERES!" />
@@ -47,10 +49,10 @@ function WhoWeAre() {
     
     (
       <Form className="formEditable" onSubmit={handleSubmit}>
-        <Form.Group className="formEditable" controlId="formBasicName">
+        <Form.Group className="titleEditable" controlId="formBasicName">
       
           <textarea
-          className="textEditable"
+          className="titleEditable"
             type="text"
             placeholder={title}
             value={title}
@@ -58,10 +60,10 @@ function WhoWeAre() {
           />
         </Form.Group>
   
-        <Form.Group className="formEditable" controlId="formBasicEmail">
+        <Form.Group className="subTitleEditable" controlId="formBasicEmail">
         
           <textarea
-          className="textEditable"
+          className="subTitleEditable"
             type="text"
             placeholder={subTitle}
             value={subTitle}
@@ -69,7 +71,7 @@ function WhoWeAre() {
           />
         </Form.Group>
   
-        <Form.Group className="formEditable" controlId="formBasicPassword">
+        <Form.Group  className="textEditable" controlId="formBasicPassword">
 
           <textarea
           className="textEditable"
@@ -80,13 +82,18 @@ function WhoWeAre() {
           />
         </Form.Group>
   
-        <Button variant="success" type="submit">
-          Aceptar
-        </Button>
+        <Buttom1 string="editar" variant="success" action={() => { setLogged(!logged) }} type="submit"/>
+
+        {adm && logged ? (<Buttom1 string="EDITAR" action={() => { setLogged(!logged) }}/>) : ("") }
+        <p className="text">¡Anímate a formar parte de este grupo!</p>
+        <p className="text">
+          <Buttom1 string="UNETE A NUESTROS TALLERES!"  />
+        </p>
+        <img className="whoWeArePicture" alt="imagen de vanina zucarelli" src="/vaninazucarelli.png" />
       </Form>
    
     )}
-     {adm ? (<Buttom2 string="editar" action={() => { setLogged(!logged) }}/>) : ("") }
+
   </>
   );
 }

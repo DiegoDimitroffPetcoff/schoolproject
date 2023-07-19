@@ -7,30 +7,70 @@
 }
 .formEditable{
   width: 100%;
-  padding:0;
-  background-color: white;
+  padding: 5% 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #dee2e6;
 }
 
-.textEditable{
-  resize: vertical;
-  width: 600px;
+.titleEditable{
+width: 100%;
   font-family: "Raleway", sans-serif;
   text-align: center;
-  color: #495057;
-
-    color: #cea6b1;
+  color: black;
     font-size: 30px;
+    background-color: transparent;  
+    height: 100px;
+    font-weight: 400;
+    background-color: transparent; 
+    transition: 0.5s;   
 
 }
+
+.titleEditable:hover{
+  background-color: rgba(255, 255, 255, 0.15);
+transition: 0.5s;
+cursor: pointer;
+  }  
+
+.subTitleEditable{
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  background-color: transparent;
+  height: 100px;
+  transition: 0.5s;
+}
+
+.subTitleEditable:hover{
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: 0.5s;
+  cursor: pointer;
+    }
+
+.textEditable{
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  background-color: transparent;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.textEditable:hover{
+background-color: rgba(255, 255, 255, 0.15);
+  transition: 0.5s;
+  cursor: pointer;
+    }
 /* Dispositivos móviles (320px - 480px) */
 @media screen and (max-width: 480px) {
   .whoWeArePicture{
     width: 50%;
  }
- .textEditable{
-  width: 400px;
- }
+
 }
