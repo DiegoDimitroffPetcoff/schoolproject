@@ -24,10 +24,10 @@ const {logged,setLogged} = useContext(AuthContext)
 
   const handleSubmit = (event) => {
     event.preventDefault();
-setLogged(!logged)
+
 
 if (name === mockLogin.name && password === mockLogin.password) {
-  console.log("Logged Successful");
+  setLogged(!logged)
   navigate("/");
 
 } else {
