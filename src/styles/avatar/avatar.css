@@ -5,4 +5,11 @@
     border: 1px solid rgba(0, 0, 0, 0.125);
     margin: 15px;
     margin-bottom: 0;
+    transition: 0.5s;
+}
+
+.avatarProfile:hover{
+    border: 1px solid rgba(0, 0, 0, 0.893);
+    cursor: pointer;
+    transition: 0.5s;
 }

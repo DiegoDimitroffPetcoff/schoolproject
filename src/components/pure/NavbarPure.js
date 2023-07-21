@@ -1,26 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import "../../styles/navbar/navbar.css";
 
 import Buttom from "./Buttom";
+import Buttom2 from "./Buttom2";
+
+import AuthContext from "../../contexts/authContext";
 
 const Navbar = () => {
+  const{logged, setLogged}=useContext(AuthContext)
   return (
     <ul>
       <li>
         <Link to="/">
           <Buttom string="INICIO"></Buttom>
-        </Link>
-      </li>
-      <li>
-        <Link to="/login">
-          <Buttom string="INGRESAR"></Buttom>
-        </Link>
-      </li>
-      <li>
-        <Link to="/register">
-          <Buttom string="REGISTRARTE"></Buttom>
         </Link>
       </li>
       <li>
@@ -36,6 +30,20 @@ const Navbar = () => {
       <li>
         <Buttom string="ESCUELA"></Buttom>
       </li>
+      {!logged ?    ( <><li>
+        <Link to="/login">
+          <Buttom string="INGRESAR"></Buttom>
+        </Link>
+      </li>
+      <li>
+        <Link to="/register">
+          <Buttom2 string="REGISTRARTE"></Buttom2>
+        </Link>
+      </li></>) :       <li>
+        <Link to="/">
+          <Buttom2 string="LOG OUT" action={()=>setLogged(!logged)}></Buttom2>
+        </Link>
+      </li> }
     </ul>
   );
 };

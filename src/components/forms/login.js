@@ -28,7 +28,7 @@ const {logged,setLogged} = useContext(AuthContext)
 
 if (name === mockLogin.name && password === mockLogin.password) {
   setLogged(!logged)
-  navigate("/");
+  navigate("/dashboard");
 
 } else {
 setWrongPassword(!wrongPassword)
