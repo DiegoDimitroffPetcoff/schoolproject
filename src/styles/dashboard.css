@@ -1,0 +1,68 @@
+.DashboardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 500px;
+  background-image: url("https://picsum.photos/id/341/2000/450");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.DashboardBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid #ffffffab 3px;
+  padding: 100px;
+  transition: 0.5s;
+  color: #ffffffab;
+}
+
+.DashboardBox:hover {
+  border: solid rgba(0, 0, 0, 0.075) 3px;
+  padding: 90px;
+  transition: 0.5s;
+  cursor: pointer;
+  color: #cea6b1;
+}
+
+.DashboardBox:hover .DashboardTitle .DashboardIcon {
+  color: #cea6b1;
+  transition: 0.5s;  
+}
+
+
+
+.DashboardIcon {
+  color: white;
+  margin: auto;
+  width: 200px;
+  font-size: 40px;
+}
+
+/* Dispositivos móviles (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .DashboardBox { 
+    padding: 0;
+  }
+  
+  .DashboardBox:hover {
+    border: solid rgba(0, 0, 0, 0.075) 3px;
+    padding: 0;
+  }
+
+}
+
+  /* iPads, tablets (481px - 768px) */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .DashboardBox {   
+    padding: 50px;
+    }
+    
+    .DashboardBox:hover {
+      border: solid rgba(0, 0, 0, 0.075) 3px;
+      padding: 40px;     
+    } 
+  }
