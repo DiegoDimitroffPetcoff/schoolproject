@@ -9,6 +9,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.AppointmentContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 500px;
+  background-color: transparent;
+}
 
 .DashboardBox {
   display: flex;
@@ -33,10 +42,22 @@
   transition: 0.5s;  
 }
 
+.AppointmentTitle{
+  color: #cea6b1;
+  transition: 0.5s;  
+}
+
 
 
 .DashboardIcon {
   color: white;
+  margin: auto;
+  width: 200px;
+  font-size: 40px;
+}
+.AppointmentIcon{
+  color: #cea6b1;
+  transition: 0.5s; 
   margin: auto;
   width: 200px;
   font-size: 40px;
@@ -50,6 +71,9 @@
     padding: 40px;
     }
     .DashboardTitle2{
+      font-size: 20px;
+    }
+    .AppointmentTitle{
       font-size: 20px;
     }
     
@@ -66,6 +90,9 @@
     padding: 40px;
   }
   .DashboardTitle2{
+    font-size: 15px;
+  }
+  .AppointmentTitle{
     font-size: 15px;
   }
   
