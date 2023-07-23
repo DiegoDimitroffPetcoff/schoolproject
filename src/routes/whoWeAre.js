@@ -1,19 +1,28 @@
+import { useContext } from "react";
+
 import WhoWeAre from "../containers/whoWeAreContainer";
 import Logo from "../components/pure/Logo";
 import NavbarBurguer from "../components/pure/NavbarBurguer";
 import Navbar from "../components/pure/Navbar";
+import Avatar from "../components/pure/Avatar";
+import AuthContext from "../contexts/authContext";
 
-function whoWeAre(params) {
+
+function WhoWeAreRoute(params) {
+ const {logged} = useContext(AuthContext)
+ console.log(logged)
   return (
     <div>
       <header className="head">
         <Logo/>
         <NavbarBurguer/>
         <Navbar/>
+        {logged ? <Avatar/> : null}
+        {logged ?<h1 className="title">QUIENES SOMOS</h1>: null}
       </header>
-      <h1 className="title">REGISTRARSE</h1>
+      
       <WhoWeAre/>
     </div>
   );
 }
-export default whoWeAre;
+export default WhoWeAreRoute;

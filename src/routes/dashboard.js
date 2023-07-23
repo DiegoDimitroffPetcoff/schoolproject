@@ -26,14 +26,12 @@ console.log(logged);
         <NavbarBurguer/>
         <Navbar/>
         <Avatar/>
+        <h1 className="title">DASHBOARD</h1>
       </header>
       <main>
-      <h1 className="title">DASHBOARD</h1>
+
         <section>{schoolEnrolled ? <GetInSchool/> : <EnrollSchool/>}</section>
         <section><Appointment/></section>
-        <section>DEJANOS UN MENSAJE</section>
-      
-  
 
       </main></>) : <Login/>
       }</> 
