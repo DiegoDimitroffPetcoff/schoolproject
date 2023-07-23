@@ -12,7 +12,7 @@ import EnrollSchool from "../containers/school/enrollSchool";
 
 function Dashboard(params) {
   const {adm, setAdm, logged, setLogged} = useContext(AuthContext)
-  const [schoolEnrolled, setSchoolEnrolled] = useState(false);
+  const [schoolEnrolled, setSchoolEnrolled] = useState(true);
 
 console.log(logged);
 
