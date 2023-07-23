@@ -47,10 +47,10 @@
   /* iPads, tablets (481px - 768px) */
   @media screen and (min-width: 481px) and (max-width: 768px) {
     .DashboardBox {   
-    padding: 20px;
+    padding: 40px;
     }
     .DashboardTitle2{
-      font-size: 15px;
+      font-size: 20px;
     }
     
     .DashboardBox:hover {
@@ -63,15 +63,15 @@
   /* Dispositivos móviles (320px - 480px) */
 @media screen and (max-width: 480px) {
   .DashboardBox { 
-    padding: 0;
+    padding: 40px;
   }
   .DashboardTitle2{
-    font-size: 10px;
+    font-size: 15px;
   }
   
   .DashboardBox:hover {
     border: solid rgba(0, 0, 0, 0.075) 3px;
-    padding: 0;
+    padding: 40px;
   }
 
 }
