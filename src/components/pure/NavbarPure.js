@@ -8,8 +8,16 @@ import Buttom2 from "./Buttom2";
 
 import AuthContext from "../../contexts/authContext";
 
+import Cookies from "js-cookie";
+
 const Navbar = () => {
   const{logged, setLogged}=useContext(AuthContext)
+function logOut(params) {
+  setLogged(!logged)
+  Cookies.remove("userData");
+}
+
+
   return (
     <ul>
       <li>
@@ -41,7 +49,7 @@ const Navbar = () => {
         </Link>
       </li></>) :       <li>
         <Link to="/">
-          <Buttom2 string="LOG OUT" action={()=>setLogged(!logged)}></Buttom2>
+          <Buttom2 string="LOG OUT" action={logOut}></Buttom2>
         </Link>
       </li> }
     </ul>

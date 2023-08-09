@@ -25,10 +25,10 @@ function LoginForm() {
     event.preventDefault();
 
     await axios
-      .post("http://localhost:8080/login/", formData)
+      .post("https://zucarellitanailsbackend.vercel.app/login/", formData)
       .then(function (response) {
         console.log("Respuesta del servidor:", response.data);
-        Cookies.set(response.data);
+        Cookies.set("userData", JSON.stringify(response.data));
         setLogged(!logged);
         navigate("/dashboard");
       })
