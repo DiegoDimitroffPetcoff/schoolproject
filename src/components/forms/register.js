@@ -8,6 +8,7 @@ import Buttom1 from "../pure/Buttom2";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie"
 
 
 function RegisterForm() {
@@ -75,7 +76,7 @@ function RegisterForm() {
         email: email,
         sendInformation: sendInformation,
       },
-      avatar:"avatar",
+      avatar:"https://api.dicebear.com/6.x/open-peeps/svg?seed="+ nickName,
       "points": 0,
       "course": [
       ],
@@ -91,7 +92,8 @@ function RegisterForm() {
 
     axios.post('https://zucarellitanailsbackend.vercel.app/user/',formData)
     .then(function (response) {
-      console.log(response);
+      console.log(response.data);
+      Cookies.set("userData", JSON.stringify(response.data));
     })
     .catch(function (error) {
       console.log(error);
