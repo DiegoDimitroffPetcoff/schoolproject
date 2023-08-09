@@ -5,6 +5,10 @@ import "../../styles/form/formContainer.css";
 
 import Buttom1 from "../pure/Buttom2";
 
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+
 function RegisterForm() {
   const [firstName, setFirstName] = useState("");
   const [secondName, setSecondName] = useState("");
@@ -14,8 +18,13 @@ function RegisterForm() {
   const [document, setDocument] = useState("");
   const [cellPhone, setCellPhone] = useState("");
   const [email, setEmail] = useState("");
-
+  const [sendInformation, setSendInformation] =useState(false)
+  const navigate = useNavigate(); 
   const handleFirstNameChange = (event) => {
+
+
+
+
     setFirstName(event.target.value);
   };
 
@@ -40,8 +49,11 @@ function RegisterForm() {
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+  };
 
-
+  const handleSendInformationChange = (event) => {    
+    setSendInformation(!sendInformation);
+    console.log(sendInformation);
   };
 
   const handleSubmit = (event) => {
@@ -61,14 +73,38 @@ function RegisterForm() {
       },
       contact:{
         cellPhone: cellPhone,
-        email: email
+        email: email,
+        sendInformation: sendInformation,
       },
-      avatar:"avatar"
+      avatar:"avatar",
+      "points": 0,
+      "course": [
+      ],
+      "status": {
+          "admin": true,
+          "alumn": false
+      }
     };
 
     // Convertir el objeto a una cadena JSON y mostrarlo en la consola
     const formDataJSON = JSON.stringify(formData);
     console.log(formDataJSON);
+
+    axios.post('https://zucarellitanailsbackend.vercel.app/user/',formData)
+    .then(function (response) {
+      console.log(response);
+    
+    })
+    .catch(function (error) {
+      console.log(error);
+    })      
+    .finally(() => {
+      navigate("/dashboard");
+    });
+
+
+
+
   };
 
   return (
@@ -155,6 +191,8 @@ function RegisterForm() {
           <Form.Check
             type="checkbox"
             label="Quiero Recibir Novedades y Ofertas disponibles"
+            onChange={handleSendInformationChange}
+            value={sendInformation}
           />
         </Form.Group>
         <div className="FormButtom">
