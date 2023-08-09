@@ -17,9 +17,6 @@ function Dashboard(params) {
 const {adm, setAdm, logged, setLogged} = useContext(AuthContext)
 const [schoolEnrolled, setSchoolEnrolled] = useState(true);
 const user = JSON.parse(Cookies.get("userData"))
-console.log(user);
-
-console.log(logged);
 
   return (
     <>

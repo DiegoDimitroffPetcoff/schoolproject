@@ -8,52 +8,38 @@ import AuthContext from "../../contexts/authContext";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 function LoginForm() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [wrongPassword, setWrongPassword] = useState(false);
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
+  const { logged, setLogged } = useContext(AuthContext);
 
+  const formData = { nickname: name, password: password };
 
-const {logged,setLogged} = useContext(AuthContext)
-  const mockLogin =     {name: "Adm",
-  password:"Adm"}    ;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-const formData = {name: name, password: password}
-console.log(formData);
-
-const handleSubmit = async (event) => {
-event.preventDefault();
-
-
-    await axios.post('https://zucarellitanailsbackend.vercel.app/login/', formData)
+    await axios
+      .post("http://localhost:8080/login/", formData)
       .then(function (response) {
-        console.log('Respuesta del servidor:', response.data);
+        console.log("Respuesta del servidor:", response.data);
+        Cookies.set(response.data);
+        setLogged(!logged);
+        navigate("/dashboard");
       })
       .catch(function (error) {
-        console.log('Error al realizar la solicitud POST:', error);
-      })
-
-
-
-
-if (name === mockLogin.name && password === mockLogin.password) {
-  setLogged(!logged)
-  navigate("/dashboard");
-} else {
-setWrongPassword(!wrongPassword)
-}
-
-
-
-
+        console.log("Error al realizar la solicitud POST:", error);
+        setWrongPassword(!wrongPassword);
+      });
   };
 
   return (
-<>
+    <>
       <Form className="formContainer" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
@@ -73,16 +59,12 @@ setWrongPassword(!wrongPassword)
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          
         </Form.Group>
 
-
-   
-          <Buttom1 variant="primary" string="ENVIAR" type="submit"/>
-       
+        <Buttom1 variant="primary" string="ENVIAR" type="submit" />
       </Form>
-      {!wrongPassword ? null :(<h1 className="title">Usuario o Constraseña</h1>)}
-</>
+      {!wrongPassword ? null : <h1 className="title">Usuario o Constraseña</h1>}
+    </>
   );
 }
 
