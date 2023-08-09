@@ -53,7 +53,6 @@ function RegisterForm() {
 
   const handleSendInformationChange = (event) => {    
     setSendInformation(!sendInformation);
-    console.log(sendInformation);
   };
 
   const handleSubmit = (event) => {
@@ -99,7 +98,7 @@ function RegisterForm() {
       console.log(error);
     })      
     .finally(() => {
-      navigate("/dashboard");
+      navigate("/");
     });
 
 
