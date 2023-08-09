@@ -6,8 +6,8 @@ import "../../styles/form/formContainer.css";
 import Buttom1 from "../pure/Buttom2";
 import AuthContext from "../../contexts/authContext";
 
-
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function LoginForm() {
   const [name, setName] = useState("");
@@ -22,17 +22,29 @@ const {logged,setLogged} = useContext(AuthContext)
   const mockLogin =     {name: "Adm",
   password:"Adm"}    ;
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+const formData = {name: name, password: password}
+console.log(formData);
+
+const handleSubmit = async (event) => {
+event.preventDefault();
+
+
+    await axios.post('https://zucarellitanailsbackend.vercel.app/login/', formData)
+      .then(function (response) {
+        console.log('Respuesta del servidor:', response.data);
+      })
+      .catch(function (error) {
+        console.log('Error al realizar la solicitud POST:', error);
+      })
+
+
 
 
 if (name === mockLogin.name && password === mockLogin.password) {
   setLogged(!logged)
   navigate("/dashboard");
-
 } else {
 setWrongPassword(!wrongPassword)
-
 }
 
 
