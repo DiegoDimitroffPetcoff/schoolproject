@@ -88,7 +88,7 @@ function RegisterForm() {
 
     // Convertir el objeto a una cadena JSON y mostrarlo en la consola
     const formDataJSON = JSON.stringify(formData);
-    console.log(formDataJSON);
+    console.log(formData);
 
     axios.post('https://zucarellitanailsbackend.vercel.app/user/',formData)
     .then(function (response) {
