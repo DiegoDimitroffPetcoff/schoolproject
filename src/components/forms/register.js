@@ -1,5 +1,6 @@
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import AuthContext from "../../contexts/authContext";
 
 import "../../styles/form/formContainer.css";
 
@@ -19,15 +20,14 @@ function RegisterForm() {
   const [cellPhone, setCellPhone] = useState("");
   const [email, setEmail] = useState("");
   const [sendInformation, setSendInformation] =useState(false)
+  
   const navigate = useNavigate(); 
+
+  const {logged, setLogged} = useContext(AuthContext)
+
   const handleFirstNameChange = (event) => {
-
-
-
-
     setFirstName(event.target.value);
   };
-
   const handleSecondNameChange = (event) => {
     setSecondName(event.target.value);
   };
@@ -92,13 +92,13 @@ function RegisterForm() {
     axios.post('https://zucarellitanailsbackend.vercel.app/user/',formData)
     .then(function (response) {
       console.log(response);
-    
     })
     .catch(function (error) {
       console.log(error);
     })      
     .finally(() => {
-      navigate("/");
+      setLogged(!logged)
+      navigate("/dashboard");
     });
 
 
