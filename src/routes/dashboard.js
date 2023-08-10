@@ -16,18 +16,23 @@ import Cookies from "js-cookie"
 function Dashboard(params) {
 const {adm, setAdm, logged, setLogged} = useContext(AuthContext)
 const [schoolEnrolled, setSchoolEnrolled] = useState(true);
-const user = JSON.parse(Cookies.get("userData"))
+
+let cookieData = null; 
+if (logged) {
+  cookieData = JSON.parse(Cookies.get("userData"));
+}
 
   return (
     <>
     {logged ?
+
 (     <> 
 <header className="head">
         <Logo/>
         <NavbarBurguer/>
         <Navbar/>
         <Avatar/>
-        <h1 className="title">Hey {user.name.firstName} {user.name.secondName}!</h1>
+        <h1 className="title">Hey {cookieData.user.name.firstName} {cookieData.user.name.secondName}!</h1>
         
       </header>
       <main>

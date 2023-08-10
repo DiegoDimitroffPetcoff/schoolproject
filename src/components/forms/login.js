@@ -27,9 +27,10 @@ function LoginForm() {
     await axios
       .post("https://zucarellitanailsbackend.vercel.app/login/", formData)
       .then(function (response) {
-        console.log("Respuesta del servidor:", response.data);
-        Cookies.set("userData", JSON.stringify(response.data));
+        //if the user is correct the Back reply with the user information and session token
+                console.log("Respuesta del servidor:", response.data);      
         setLogged(!logged);
+        Cookies.set("userData", JSON.stringify(response.data));
         navigate("/dashboard");
       })
       .catch(function (error) {

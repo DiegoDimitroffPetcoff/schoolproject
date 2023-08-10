@@ -80,17 +80,14 @@ function RegisterForm() {
       "points": 0,
       "course": [
       ],
-      "status": {
-          "admin": true,
-          "alumn": false
-      }
+      "role":"alumn",
     };
 
 
     axios.post('https://zucarellitanailsbackend.vercel.app/user',formData)
     .then(function (response) {
       console.log(response.data);
-      Cookies.set("userData", JSON.stringify(response.data));
+        Cookies.set("userData", JSON.stringify(response.data));
     })
     .catch(function (error) {
       console.log(error);

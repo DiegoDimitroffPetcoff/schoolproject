@@ -24,8 +24,7 @@ function HomePage() {
   ];
 
   const {logged} = useContext(AuthContext)
-  console.log(logged);
-
+ 
 
   return (
     <div className="homePageContainer">
