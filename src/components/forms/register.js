@@ -86,11 +86,8 @@ function RegisterForm() {
       }
     };
 
-    // Convertir el objeto a una cadena JSON y mostrarlo en la consola
-    const formDataJSON = JSON.stringify(formData);
-    console.log(formData);
 
-    axios.post('https://zucarellitanailsbackend.vercel.app/user/',formData)
+    axios.post('https://zucarellitanailsbackend.vercel.app/user',formData)
     .then(function (response) {
       console.log(response.data);
       Cookies.set("userData", JSON.stringify(response.data));
