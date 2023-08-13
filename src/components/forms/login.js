@@ -19,11 +19,24 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const { logged, setLogged } = useContext(AuthContext);
-console.log(logged);
+  
   const formData = { nickname: name, password: password };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+
+
+  axios.get('https://zucarellitanailsbackend.vercel.app/user')
+  .then(function (response) {
+    console.log(response.data);
+          })
+  .catch(function (error) {
+    console.log(error);
+  })    
+
+
+
 
     await axios
       .post("https://zucarellitanailsbackend.vercel.app/login/", formData)
@@ -38,6 +51,7 @@ console.log(logged);
         console.log("Error al realizar la solicitud POST:", error);
         setWrongPassword(!wrongPassword);
       });
+
   };
 
   return (

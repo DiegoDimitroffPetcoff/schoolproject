@@ -12,8 +12,12 @@ import EnrollSchool from "../containers/school/enrollSchool";
 import Appointment from "../containers/appointment/appointment";
 
 import Cookies from "js-cookie";
+import axios from "axios";
 
 function Dashboard(params) {
+  
+
+
   const { adm, setAdm, logged, setLogged } = useContext(AuthContext);
   const [schoolEnrolled, setSchoolEnrolled] = useState(true);
 
