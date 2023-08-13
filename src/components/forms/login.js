@@ -5,6 +5,7 @@ import "../../styles/form/formContainer.css";
 
 import Buttom1 from "../pure/Buttom2";
 import AuthContext from "../../contexts/authContext";
+import Dashboard from "../../routes/dashboard";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -18,17 +19,17 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const { logged, setLogged } = useContext(AuthContext);
-
+console.log(logged);
   const formData = { nickname: name, password: password };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     await axios
-      .post("https://zucarellitanailsbackend.vercel.app/login/", formData)
+      .post("http://localhost:8080/login/", formData)
       .then(function (response) {
         //if the user is correct the Back reply with the user information and session token
-                console.log("Respuesta del servidor:", response.data);      
+        console.log("Respuesta del servidor:", response.data);
         setLogged(!logged);
         Cookies.set("userData", JSON.stringify(response.data));
         navigate("/dashboard");
@@ -41,30 +42,38 @@ function LoginForm() {
 
   return (
     <>
-      <Form className="formContainer" onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="text"
-            placeholder="Usuario"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </Form.Group>
+      {!logged ? (
+        <>
+          <Form className="formContainer" onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="text"
+                placeholder="Usuario"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="password"
-            placeholder="Constraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="password"
+                placeholder="Constraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </Form.Group>
 
-        <Buttom1 variant="primary" string="ENVIAR" type="submit" />
-      </Form>
-      {!wrongPassword ? null : <h1 className="title">Usuario o Constraseña</h1>}
+            <Buttom1 variant="primary" string="ENVIAR" type="submit" />
+          </Form>
+          {!wrongPassword ? null : (
+            <h1 className="title">Usuario o Constraseña</h1>
+          )}
+        </>
+      ) : (
+        <Dashboard/>
+      )}
     </>
   );
 }

@@ -11,38 +11,44 @@ import Avatar from "../components/pure/Avatar";
 import EnrollSchool from "../containers/school/enrollSchool";
 import Appointment from "../containers/appointment/appointment";
 
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
 
 function Dashboard(params) {
-const {adm, setAdm, logged, setLogged} = useContext(AuthContext)
-const [schoolEnrolled, setSchoolEnrolled] = useState(true);
+  const { adm, setAdm, logged, setLogged } = useContext(AuthContext);
+  const [schoolEnrolled, setSchoolEnrolled] = useState(true);
 
-let cookieData = null; 
-if (logged) {
-  cookieData = JSON.parse(Cookies.get("userData"));
-}
+  let cookieData = null;
+  if (logged) {
+    cookieData = JSON.parse(Cookies.get("userData"));
+  }
 
   return (
     <>
-    {logged ?
-
-(     <> 
-<header className="head">
-        <Logo/>
-        <NavbarBurguer/>
-        <Navbar/>
-        <Avatar/>
-        <h1 className="title">Hey {cookieData.user.name.firstName} {cookieData.user.name.secondName}!</h1>
-        
-      </header>
-      <main>
-
-        <section>{schoolEnrolled ? <GetInSchool/> : <EnrollSchool/>}</section>
-        <section><Appointment/></section>
-
-      </main></>) : <Login/>
-      }</> 
-   
+      {logged ? (
+        <>
+          <header className="head">
+            <Logo />
+            <NavbarBurguer />
+            <Navbar />
+            <Avatar />
+            <h1 className="title">
+              Hey {cookieData.user.name.firstName}{" "}
+              {cookieData.user.name.secondName}!
+            </h1>
+          </header>
+          <main>
+            <section>
+              {schoolEnrolled ? <GetInSchool /> : <EnrollSchool />}
+            </section>
+            <section>
+              <Appointment />
+            </section>
+          </main>
+        </>
+      ) : (
+        <Login />
+      )}
+    </>
   );
 }
 export default Dashboard;
