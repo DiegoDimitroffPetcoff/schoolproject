@@ -26,18 +26,6 @@ function LoginForm() {
     event.preventDefault();
 
 
-
-  axios.get('https://zucarellitanailsbackend.vercel.app/user')
-  .then(function (response) {
-    console.log(response.data);
-          })
-  .catch(function (error) {
-    console.log(error);
-  })    
-
-
-
-
     await axios
       .post("https://zucarellitanailsbackend.vercel.app/login/", formData)
       .then(function (response) {

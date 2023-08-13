@@ -9,19 +9,39 @@ import Buttom1 from "../components/pure/Buttom";
 
 import authContext from "../contexts/authContext";
 
+import Cookies from "js-cookie";
+
+
 
 function WhoWeAre() {
+
   const [title, setTitle] = useState("Apasionados por tus uñas");
   const [subTitle, setSubTitle] = useState("Nuestro trabajo es el de hacer y enseñar.. aprender y compartir");
   const [text, setText] = useState("Mi nombre es Vanina Zucarelli, trabajando y dirigiendo este hermoso emprendimiento desde hace más de 10 años. Quiero darte la bienvenida,espero puedas encontrar este sitio interesante, donde podrás ver los trabajos realizados tanto por mí como por mis alumnos.");
   const [editeActive, setEditeActive] = useState(false);
 
+
   const {adm, setAdm, logged, setLogged} = useContext(authContext)
+
+  let cookieData = null;
+  let role = "alumn"
+
+  if (logged) {
+    cookieData = JSON.parse(Cookies.get("userData"));
+    console.log(cookieData.user.role);
+if (cookieData.user.role === "admin") {
+role = "admin"
+
+} 
+   
+  }
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
   };
+
+
 
   return (
     <>
@@ -34,7 +54,7 @@ function WhoWeAre() {
         <p className="text">
      {text}
         </p>
-        {adm && logged && !editeActive? (<Buttom1 string="EDITAR" action={() => { setEditeActive(!editeActive) }}/>) : ("") }
+        {adm && logged && role == "admin" && !editeActive? (<Buttom1 string="EDITAR" action={() => { setEditeActive(!editeActive) }}/>) : ("") }
         <p className="text">¡Anímate a formar parte de este grupo!</p>
         <p className="text">
           <Buttom2 string="UNETE A NUESTROS TALLERES!" />

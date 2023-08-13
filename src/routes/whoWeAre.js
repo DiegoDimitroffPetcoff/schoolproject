@@ -10,7 +10,7 @@ import AuthContext from "../contexts/authContext";
 
 function WhoWeAreRoute(params) {
  const {logged} = useContext(AuthContext)
- console.log(logged)
+
   return (
     <div>
       <header className="head">
