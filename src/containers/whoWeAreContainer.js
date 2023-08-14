@@ -10,14 +10,15 @@ import Buttom1 from "../components/pure/Buttom";
 import authContext from "../contexts/authContext";
 
 import Cookies from "js-cookie";
+import axios from "axios";
 
 
 
 function WhoWeAre() {
 
-  const [title, setTitle] = useState("Apasionados por tus uñas");
-  const [subTitle, setSubTitle] = useState("Nuestro trabajo es el de hacer y enseñar.. aprender y compartir");
-  const [text, setText] = useState("Mi nombre es Vanina Zucarelli, trabajando y dirigiendo este hermoso emprendimiento desde hace más de 10 años. Quiero darte la bienvenida,espero puedas encontrar este sitio interesante, donde podrás ver los trabajos realizados tanto por mí como por mis alumnos.");
+  const [title, setTitle] = useState("Cargando...");
+  const [subTitle, setSubTitle] = useState("Cargando...");
+  const [text, setText] = useState("Cargando...");
   const [editeActive, setEditeActive] = useState(false);
 
 
@@ -28,17 +29,40 @@ function WhoWeAre() {
 
   if (logged) {
     cookieData = JSON.parse(Cookies.get("userData"));
-    console.log(cookieData.user.role);
-if (cookieData.user.role === "admin") {
-role = "admin"
-
-} 
-   
+    if (cookieData.user.role === "admin") {
+      role = "admin"
+    }  
   }
+
+  axios.get('https://zucarellitanailsbackend.vercel.app/whoweare/')
+  .then(function (response) {
+    setTitle(response.data[0].title)
+    setSubTitle(response.data[0].subTitle)
+    setText(response.data[0].text)
+  })
+  .catch(function (error) {
+
+    console.log(error);
+  })
+
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+  // Obtén los valores de los campos de texto del formulario
+  const newTitle = event.target.elements.title.value;
+  const newSubTitle = event.target.elements.subTitle.value;
+  const newText = event.target.elements.text.value;
+
+  // Actualiza los estados con los nuevos valores
+  setTitle(newTitle);
+  setSubTitle(newSubTitle);
+  setText(newText);
+
+
+
+
   };
 
 
@@ -54,7 +78,7 @@ role = "admin"
         <p className="text">
      {text}
         </p>
-        {adm && logged && role == "admin" && !editeActive? (<Buttom1 string="EDITAR" action={() => { setEditeActive(!editeActive) }}/>) : ("") }
+        {adm && logged && role == "admin" && !editeActive? (<Buttom1 string="EDITAR" action={() => { setEditeActive(!editeActive)}}/>) : ("") }
         <p className="text">¡Anímate a formar parte de este grupo!</p>
         <p className="text">
           <Buttom2 string="UNETE A NUESTROS TALLERES!" />
