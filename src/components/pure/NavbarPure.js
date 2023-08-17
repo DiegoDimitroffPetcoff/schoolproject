@@ -49,7 +49,9 @@ function logOut(params) {
         </Link>
       </li></>) :       <li>
         <Link to="/">
-          <Buttom2 string="LOG OUT" action={logOut}></Buttom2>
+          <Buttom2 
+          string="LOG OUT" 
+          onClick={logOut}></Buttom2>
         </Link>
       </li> }
     </ul>

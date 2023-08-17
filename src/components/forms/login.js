@@ -30,7 +30,7 @@ function LoginForm() {
       .post("https://zucarellitanailsbackend.vercel.app/login/", formData)
       .then(function (response) {
         //if the user is correct the Back reply with the user information and session token
-        console.log("Respuesta del servidor:", response.data);
+        //console.log("Respuesta del servidor:", response.data);
         setLogged(!logged);
         Cookies.set("userData", JSON.stringify(response.data));
         navigate("/dashboard");

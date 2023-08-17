@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/sectionOne.css";
 import "../styles/whoWeAre.css";
@@ -19,15 +20,19 @@ function WhoWeAre() {
   const [title, setTitle] = useState("Cargando...");
   const [subTitle, setSubTitle] = useState("Cargando...");
   const [text, setText] = useState("Cargando...");
+  const [id, setId] = useState(null);
   const [editeActive, setEditeActive] = useState(false);
 
   const {adm, setAdm, logged, setLogged} = useContext(authContext)
+
   function callToApi() {
     axios.get('https://zucarellitanailsbackend.vercel.app/whoweare/')
-    .then(function (response) {      
-      setTitle(response.data[0].title)
+    .then(function (response) {   
+       setTitle(response.data[0].title)
       setSubTitle(response.data[0].subTitle)
       setText(response.data[0].text)
+      setId(response.data[0]._id)
+
     }).catch(function (error) {  
       console.log(error);
     })
@@ -49,22 +54,20 @@ function WhoWeAre() {
 
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // Actualiza los estados con los nuevos valores
-    const newTitle = title;
-    const newSubTitle = subTitle;
-    const newText = text;
-  
-    // Aquí puedes realizar cualquier otra lógica o enviar los datos a la base de datos
-    // ...
-  
-    // Puedes imprimir los valores en la consola para verificar
-    console.log("New Title:", newTitle);
-    console.log("New SubTitle:", newSubTitle);
-    console.log("New Text:", newText);
-
+    console.log(event.target);
+    const data = { title,
+      subTitle,
+      text
+    };
+    await axios.patch(`https://zucarellitanailsbackend.vercel.app/whoweare/${id}`, data)
+    .then(function (response) {   
+      console.log(response)
+      setEditeActive(!editeActive)
+    }).catch(function (error) {  
+      console.log(error);
+    })
   };
 
 
