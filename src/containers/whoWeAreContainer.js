@@ -1,5 +1,5 @@
 import { Form, Button } from "react-bootstrap";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import "../styles/sectionOne.css";
 import "../styles/whoWeAre.css";
@@ -21,8 +21,17 @@ function WhoWeAre() {
   const [text, setText] = useState("Cargando...");
   const [editeActive, setEditeActive] = useState(false);
 
-
   const {adm, setAdm, logged, setLogged} = useContext(authContext)
+  function callToApi() {
+    axios.get('https://zucarellitanailsbackend.vercel.app/whoweare/')
+    .then(function (response) {      
+      setTitle(response.data[0].title)
+      setSubTitle(response.data[0].subTitle)
+      setText(response.data[0].text)
+    }).catch(function (error) {  
+      console.log(error);
+    })
+  }
 
   let cookieData = null;
   let role = "alumn"
@@ -34,17 +43,9 @@ function WhoWeAre() {
     }  
   }
 
-  axios.get('https://zucarellitanailsbackend.vercel.app/whoweare/')
-  .then(function (response) {
-    
-    setTitle(response.data[0].title)
-    setSubTitle(response.data[0].subTitle)
-    setText(response.data[0].text)
-  })
-  .catch(function (error) {
-
-    console.log(error);
-  })
+  useEffect(()=>{
+  callToApi()
+  },[])
 
 
 
@@ -63,8 +64,6 @@ function WhoWeAre() {
     console.log("New Title:", newTitle);
     console.log("New SubTitle:", newSubTitle);
     console.log("New Text:", newText);
-
-
 
   };
 
@@ -87,8 +86,7 @@ function WhoWeAre() {
           <Buttom2 string="UNETE A NUESTROS TALLERES!" />
         </p>
         <img className="whoWeArePicture" alt="imagen de vanina zucarelli" src="/vaninazucarelli.png" />
-      </div>
-     
+      </div>     
     ) : 
     
     
@@ -104,6 +102,7 @@ function WhoWeAre() {
           <textarea
           className="titleEditable"
             type="text"
+            value={title}
             placeholder={title}          
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -112,6 +111,7 @@ function WhoWeAre() {
           <textarea
           className="subTitleEditable"
             type="text"
+            value={subTitle}
             placeholder={subTitle}
             onChange={(e) => setSubTitle(e.target.value)}
           />
@@ -120,29 +120,29 @@ function WhoWeAre() {
           <textarea
           className="textEditable"
             type="text"
+            value={text}
             placeholder={text}
          
             onChange={(e) => setText(e.target.value)}
           />
         </Form.Group>  
-        <Buttom1 string="ACEPTAR" variant="success" action={() => { setEditeActive(!editeActive) }} type="submit"/>
-
-
-        
-        
-        
-        
-        
+        <Buttom1
+          string="ACEPTAR"
+          variant="success"
+          onClick={() => {
+          handleSubmit();
+          setEditeActive(!editeActive);
+          }}
+          type="submit"
+          />
         <p className="text">¡Anímate a formar parte de este grupo!</p>         
         <p className="text">
           <Buttom1 string="UNETE A NUESTROS TALLERES!"  />
         </p>
         <img className="whoWeArePicture" alt="imagen de vanina zucarelli" src="/vaninazucarelli.png" />
-      </Form>
-   
+      </Form>   
     )}
-
-  </>
+    </>
   );
 }
 export default WhoWeAre;
