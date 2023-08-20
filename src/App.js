@@ -8,6 +8,7 @@ import Login from "./routes/login";
 import Register from "./routes/register";
 import WhoWeAre from "./routes/whoWeAre";
 import Dashboard from "./routes/dashboard";
+import DesignRoute from "./routes/design";
 
 import AuthContext from "./contexts/authContext";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/register" element={<Register/>} />
         <Route path="/whoweare" element={<WhoWeAre/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/design" element={<DesignRoute/>} />
       </Routes>
       </AuthContext.Provider>
     </>

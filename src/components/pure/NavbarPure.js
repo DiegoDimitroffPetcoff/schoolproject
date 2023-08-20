@@ -34,9 +34,10 @@ function logOut(params) {
       </li>
       <li>
         <Buttom string="DISEÑOS"></Buttom>
-      </li>
+      </li>      
       <li>
-        <Buttom string="ESCUELA"></Buttom>
+      <Link to="/Design">
+        <Buttom string="TALLERES"></Buttom></Link>
       </li>
       {!logged ?    ( <><li>
         <Link to="/login">
