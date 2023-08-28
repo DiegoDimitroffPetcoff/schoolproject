@@ -19,9 +19,9 @@ function DesignRoute(params) {
         <NavbarBurguer/>
         <Navbar/>
         {logged ? <Avatar/> : null}
-        {logged ?<h1 className="title">QUIENES SOMOS</h1>: null}
+        {logged ?<h1 className="title">TALLERES</h1>: null}
       </header>
-      hola
+      
       <Design/>
     </div>
   );

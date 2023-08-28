@@ -32,8 +32,11 @@ function logOut(params) {
       <li>
         <Buttom string="AGENDA TU CITA"></Buttom>
       </li>
+      
       <li>
+        <Link to="/Design">
         <Buttom string="DISEÑOS"></Buttom>
+        </Link>
       </li>      
       <li>
       <Link to="/Design">

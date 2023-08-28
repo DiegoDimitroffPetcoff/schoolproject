@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../styles/sectionOne.css";
 import "../styles/whoWeAre.css";
+import "../styles/design/designContainer.css"
 
 import Buttom2 from "../components/pure/Buttom2";
 import Buttom1 from "../components/pure/Buttom";
@@ -12,6 +13,7 @@ import authContext from "../contexts/authContext";
 
 import Cookies from "js-cookie";
 import axios from "axios";
+import DesignBox from "../components/designBox";
 
 
 
@@ -76,14 +78,13 @@ function Design() {
     <>
     {!editeActive ? (
       <div className="SectionContainerOne">
-        <h1 className="title">DISEÑOS</h1>
+        <h1 className="title">TALLERES</h1>
         <p className="subTitle">
-          Todos nuestros trabajos!
+          Sumate a aprender con nosotros!
         </p>
-        <div>IMAGEN</div>
-        <div>IMAGEN</div>
-        <div>IMAGEN</div>
-        <div>IMAGEN</div>
+        <div className="DesignContainer">
+          <DesignBox/>
+        </div>
         
         
         </div>     
