@@ -1,6 +1,6 @@
 import "../styles/sectionOne.css";
 import "../styles/whoWeAre.css";
-import "../styles/design/designBox.css"
+import "../styles/course/courseBox.css"
 function DesignBox() {
 
   const mockCourses= [ 
