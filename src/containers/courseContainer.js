@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../styles/sectionOne.css";
 import "../styles/whoWeAre.css";
-import "../styles/design/designContainer.css"
+import "../styles/course/courseContainer.css"
 
 import Buttom2 from "../components/pure/Buttom2";
 import Buttom1 from "../components/pure/Buttom";
@@ -13,11 +13,11 @@ import authContext from "../contexts/authContext";
 
 import Cookies from "js-cookie";
 import axios from "axios";
-import DesignBox from "../components/designBox";
+import DesignBox from "../components/courseBox";
 
 
 
-function Design() {
+function Course() {
 
   const [title, setTitle] = useState("Cargando...");
   const [subTitle, setSubTitle] = useState("Cargando...");
@@ -84,8 +84,7 @@ function Design() {
         </p>
         <div className="DesignContainer">
           <DesignBox/>
-        </div>
-        
+        </div>   
         
         </div>     
     ) : 
@@ -146,4 +145,4 @@ function Design() {
     </>
   );
 }
-export default Design;
+export default Course;
