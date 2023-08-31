@@ -10,6 +10,7 @@ import WhoWeAre from "./routes/whoWeAre";
 import Dashboard from "./routes/dashboard";
 import CourseRoute from "./routes/course";
 import DesigneRoute from "./routes/designe";
+import CourseIn from "./routes/courseInRoute";
 
 import AuthContext from "./contexts/authContext";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/whoweare" element={<WhoWeAre/>} />
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/course" element={<CourseRoute/>} />
+        <Route path="/coursein" element={<CourseIn/>} />   
         <Route path="/designe" element={<DesigneRoute/>} />
       </Routes>
       </AuthContext.Provider>
