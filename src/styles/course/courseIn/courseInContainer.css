@@ -1,0 +1,16 @@
+.courseInContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    align-items: center;
+    box-shadow: 0px 0px 20px 3px #cea6b1;
+
+
+}
+
+.courseInContainer img {
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 3px #cea6b1;
+    margin: 20px;
+}
+
